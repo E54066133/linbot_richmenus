@@ -94,8 +94,7 @@
 ## final report ppt & demo
 - [期末報告 PPT](https://docs.google.com/presentation/d/14qQ4UPfRpipqk7Z_lndYVSX4U7moSff1B9T4pLNx16A/edit#slide=id.gdc04e28e13_11_66)
 
-- demo 影片
-https://www.youtube.com/watch?v=JLT_Bm4jLEk&t=18s
+- [demo 影片](https://www.youtube.com/watch?v=JLT_Bm4jLEk&t=18s)
 
 ## References
 - [Final Project Template](https://playlab.computing.ncku.edu.tw:3001/QDl1-LDMS66IoNG44h4E7A)
