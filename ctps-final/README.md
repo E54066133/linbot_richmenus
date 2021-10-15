@@ -13,21 +13,10 @@
 
 生活在成大將近4年，我們每天的午餐時間看著形形色色的店家，看似玲瑯滿目卻都吃膩了，中午覓食已經從期待變成壓力，每天問著「待會吃什麼?」，然後花費大量時間和心力，還是不知道要午餐吃什麼。因此我們希望運用Computational Thinking and Problem Solving 的思維，幫助大家解決這個困擾已久的問題。
 
-## Team members
-
-| Name         | School ID | Email                     |
-| ------------ | --------- | ------------------------- |
-| 許孝華 | E54066133       | s0917275664@gmail.com |
-| 林鑫伯 | E54062058       | a0906256956@gmail.com |
-| 莊雲澔 | D44076020       | lasib890612@gmail.com |
-| 楊文宇 | H44081052       | poteryang10@gmail.com |
-| 周明坤 | AN4096750       |AN4096750@gs.ncku.edu.tw|
-
 
 ## Problem Definition
 
 #### My target problem - 解決成大師生不知道午餐吃什麼的困擾?
-
 
 
 ## Problem Decomposition
@@ -39,42 +28,6 @@
 - **地**：成大周遭 1.5km 以內距離
 - **constrain** : 交通限制(交通工具)、店家營業時間限制、用戶人數(餐廳是否能容納)、預計等待及用餐時間
 
-
-
-```graphviz
-digraph hierarchy{
-  x1 [fillcolor="Orange", style=filled, shape=box label="不知道要午餐要吃什麼"]
-  rankdir=LR;
-
-  
-  root1 [fillcolor=white, style=filled, shape=box label="店家資料"]
-  s1 [fillcolor=white, style=filled, shape=box label="營業時間"]
-  s2 [fillcolor=white, style=filled, shape=box label="店家位置"]
-  s3 [fillcolor=white, style=filled, shape=box label="販售餐點類型"]
-  s4 [fillcolor=white, style=filled, shape=box label="店家繁忙程度"]
-  s5 [fillcolor=white, style=filled, shape=box label="餐點價格"]
-  root1->{s1 s2 s3 s4 s5}
-  
-  root2 [fillcolor=Pink, style=filled, shape=box label="用戶資料"]
-  a1 [fillcolor=Pink, style=filled, shape=box label="午餐時段"]
-  a2 [fillcolor=Pink, style=filled, shape=box label="餐點取向"]
-  a3 [fillcolor=Pink, style=filled, shape=box label="價格取向"]
-  a4 [fillcolor=Pink, style=filled, shape=box label="移動方式"]
-  a5 [fillcolor=Pink, style=filled, shape=box label="其他 attributes"]
-  root2->{a1 a2 a3 a4 a5}
-  
-  root3 [fillcolor=darkolivegreen1, style=filled, shape=box label="演算法"]
-  b1 [fillcolor=darkolivegreen1, style=filled, shape=box label="媒合店家資料和用戶要求 算出推薦店家"]
-  root3->b1
-  root4 [fillcolor=darkslategray1, style=filled, shape=box label="回推訊息"]
-  c1 [fillcolor=darkslategray1, style=filled, shape=box label="linbot"]
-  root4->{c1}
- 
-  
-  x1->{root1 root2 root3 root4}
-  
-}
-```
 
 ## Pattern Recognition
 
