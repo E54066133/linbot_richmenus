@@ -95,29 +95,7 @@
 - [期末報告 PPT](https://docs.google.com/presentation/d/14qQ4UPfRpipqk7Z_lndYVSX4U7moSff1B9T4pLNx16A/edit#slide=id.gdc04e28e13_11_66)
 
 - demo 影片
-{%youtube JLT_Bm4jLEk%}
+https://www.youtube.com/watch?v=JLT_Bm4jLEk&t=18s
 
-
-## Project Work Partition and Task Owners
-- 問題發想和統籌規劃 - **許孝華**
-- 店家資料收集 
-    - 搜尋店家 - **莊雲澔** **楊文宇**
-    - 測量抵達時間 - **莊雲澔**
-    - 網路爬蟲 - **楊文宇** **莊雲澔**
-- 使用者優化設計 
-    - 電腦版介面設計 - **許孝華**
-    - line developer 圖文選單 - **許孝華**
-    - richmenus 圖文選單撰寫 -**林鑫伯**
-    - richmenus 圖片製作 -**周明坤**
-- 餐廳推薦演算法設計 - **林鑫伯**
-- Linebot 設計 - **許孝華 林鑫伯**
-- 成品測試及debug - **林鑫伯 許孝華**
-
-
-- 期中 presentation - **許孝華 莊雲澔**
-- 期末 presentation - **所有人**
-- final template 撰寫 - **許孝華**
-- source code 整理 - **林鑫伯**
-- demo video  錄製 - **許孝華**
 ## References
 - [Final Project Template](https://playlab.computing.ncku.edu.tw:3001/QDl1-LDMS66IoNG44h4E7A)
