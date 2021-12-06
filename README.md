@@ -107,16 +107,16 @@
     - line developer 圖文選單 - **許孝華(我)**
     - richmenus 圖文選單撰寫 -**林鑫伯**
     - richmenus 圖片製作 -**周明坤**
-- 餐廳推薦演算法設計 - **林鑫伯**
+- 餐廳推薦演算法設計 - **林鑫伯** **許孝華(我)** 
 - Linebot 設計 - **許孝華(我) 林鑫伯**
 - 成品測試及debug - **林鑫伯 許孝華(我)**
 
 
-- 期中 presentation - **許孝華 莊雲澔**
+- 期中 presentation - **許孝華(我) 莊雲澔**
 - 期末 presentation - **所有人**
-- final template 撰寫 - **許孝華**
+- final template 撰寫 - **許孝華(我)**
 - source code 整理 - **林鑫伯**
-- demo video  錄製 - **許孝華**
+- demo video  錄製 - **許孝華(我)**
 
 
 ## References
