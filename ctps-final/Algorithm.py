@@ -90,13 +90,13 @@ def algorithm(input, user_id):
     food_type = user_need["attributes"]
     user_air = user_need["aircon"]
     user_drink = user_need["drinks"]
-    if user_need["price"] == "0":
+    if user_need["price"] == "0":            # 確認價格條件
         accept_price = 0
     else:
         accept_price = len(user_need["price"])
     for rest in list(temp_dict.keys()):
         flag = False
-        for tags in temp_dict[rest]["food_type"]:
+        for tags in temp_dict[rest]["food_type"]:     # 確認食物類型條件
             if tags == food_type:
                 flag = True
                 break
@@ -108,17 +108,17 @@ def algorithm(input, user_id):
             del temp_dict[rest]
             continue
 
-        if user_drink == "飲料" and temp_dict[rest]["drinks"] == "None":
+        if user_drink == "飲料" and temp_dict[rest]["drinks"] == "None":    # 確認飲料條件
             del temp_dict[rest]
             continue
 
-        if user_air == "冷氣" and temp_dict[rest]["aircon"] == "None":
+        if user_air == "冷氣" and temp_dict[rest]["aircon"] == "None":      # 確認空調條件
             del temp_dict[rest]
 
 
     # check if the store is reachable
     now = time.time()
-    result = time.localtime(now)
+    result = time.localtime(now)  # 抓目前時間
     weekdays = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
     search_day = weekdays[result.tm_wday]
     user_loc = user_need["campus"]
