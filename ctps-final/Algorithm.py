@@ -207,7 +207,7 @@ def algorithm(input, user_id):
     return sorted_score_dict
 
 
-def write_prev_action(user_id, prev_action):                           # 建立用戶清單
+def write_prev_action(user_id, prev_action):                           # 測試用 用戶清單
 
     with open('./prev_action.json', 'r', encoding='utf-8') as f:
         j = json.load(f)
@@ -223,7 +223,7 @@ def write_prev_action(user_id, prev_action):                           # 建立�
     return
 
 
-def get_prev_action(user_id):
+def get_prev_action(user_id):                                            # 測試用 抓資料功能
 
     with open('./prev_action.json', 'r', encoding='utf-8') as f:
         j = json.load(f)
