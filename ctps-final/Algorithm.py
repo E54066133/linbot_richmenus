@@ -121,8 +121,8 @@ def algorithm(input, user_id):
     result = time.localtime(now)  # 抓目前時間
     weekdays = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
     search_day = weekdays[result.tm_wday]
-    user_loc = user_need["campus"]
-    user_mov = user_need["Transportation"]
+    user_loc = user_need["campus"]             # 抓用戶地點(校園)資料
+    user_mov = user_need["Transportation"]     # 抓用戶交通方式資料
     for rest in list(temp_dict.keys()):
 
         # delete those stores are not open
@@ -133,7 +133,7 @@ def algorithm(input, user_id):
         elif temp_dict[rest]["Time"][search_day] == "24 小時營業":
             continue
 
-        # stores open, delete stores are not reachable
+        # stores open, delete stores are not reachable   # 根據不同的交通方式計算到店時間，若超過用戶可接受時間就不推薦該間店
         else:
             setting_time = int(user_need["time"]) * 60
             if setting_time > int(temp_dict[rest][user_mov][user_loc][0:-3]) + 60 * int(result.tm_hour) + int(result.tm_min):
@@ -146,16 +146,16 @@ def algorithm(input, user_id):
 
     #### recommend restaurant ####
     rest_score_dict = {}
-    env_condition = Weather.get_weather()
+    env_condition = Weather.get_weather()         # 抓當天天氣資訊(網路爬蟲)
     temp = float(env_condition["temp"])
     rain = float(env_condition["rain"][0:-1])
     for rest in list(temp_dict.keys()):
 
         rating = float(temp_dict[rest]["rating"])
-        temp_dict[rest]["reviews_count"] = temp_dict[rest]["reviews_count"].replace(",", "")
-        number_of_reviews = int(temp_dict[rest]["reviews_count"][0:-4])
-        distance = int(temp_dict[rest][user_mov][user_loc][0:-3])
-        if not temp_dict[rest]["Popular Times"][search_day] or temp_dict[rest]["Popular Times"][search_day][0] == ' 時的繁忙程度通常為 %。'\
+        temp_dict[rest]["reviews_count"] = temp_dict[rest]["reviews_count"].replace(",", "")    # 店家資料切割
+        number_of_reviews = int(temp_dict[rest]["reviews_count"][0:-4])                         # 計算 Google Maps 評論數目
+        distance = int(temp_dict[rest][user_mov][user_loc][0:-3])                               # 計算用戶與店家之間的道路距離
+        if not temp_dict[rest]["Popular Times"][search_day] or temp_dict[rest]["Popular Times"][search_day][0] == ' 時的繁忙程度通常為 %。'\   #抓 Google Maps 店家繁忙與否
                 or temp_dict[rest]["Popular Times"][search_day][int(user_need["time"]) - 6][14:-2] == '':
             busy = 0
         else:
@@ -177,18 +177,18 @@ def algorithm(input, user_id):
         # check the weather. if it is too hot or it rains heavily, make the weight of distance higher
 
         if temp < 30 and rain < 70:
-            recommend_score = rating * 10 + 2 * review_point + 0.2 * distance_point + 0.2 * busy_point
+            recommend_score = rating * 10 + 2 * review_point + 0.2 * distance_point + 0.2 * busy_point    # 計算推薦分數(晴天)
         else:
-            recommend_score = rating * 9 + review_point + 0.35 * distance_point + 0.25 * busy_point
+            recommend_score = rating * 9 + review_point + 0.35 * distance_point + 0.25 * busy_point       # 計算推薦分數(雨天)
 
-        rest_score_dict[rest] = recommend_score
+        rest_score_dict[rest] = recommend_score    
 
-    sorted_score_list = sorted(rest_score_dict.items(), key=lambda x: x[1], reverse=True)
+    sorted_score_list = sorted(rest_score_dict.items(), key=lambda x: x[1], reverse=True)                 # sort 推薦分數list
     print(sorted_score_list)
     sorted_score_dict = {}
     count = 0
     for rest in sorted_score_list:
-        if count >= 10:
+        if count >= 10:             # 只推薦最高分的十間
             break
         new_dict = \
             {
@@ -207,7 +207,7 @@ def algorithm(input, user_id):
     return sorted_score_dict
 
 
-def write_prev_action(user_id, prev_action):
+def write_prev_action(user_id, prev_action):                           # 建立用戶清單
 
     with open('./prev_action.json', 'r', encoding='utf-8') as f:
         j = json.load(f)
@@ -242,7 +242,7 @@ def RepresentInt(s):
 
 
 if __name__ == "__main__":
-    user_id = "E54062058"
+    user_id = "E54062058"    # 測試
     algorithm('開始搜尋', user_id)
     write_prev_action(user_id, "set aircon")
     write_prev_action(user_id, 'set drink')
