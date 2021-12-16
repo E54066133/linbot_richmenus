@@ -14,7 +14,7 @@ def Consolidate(input, user_id, data_type):
         with open('./user_data.json') as f:
             j = json.load(f)
 
-            user_dict = \
+            user_dict = \                # 用戶資料格式
                 {
                     user_id: {
                         "午餐時段": ,
@@ -37,7 +37,7 @@ def Consolidate(input, user_id, data_type):
         if user_id in j:
             record = True
 
-        if not record:
+        if not record:                  # 若為新用戶，註冊新usre_id
             user_dict = \
                 {
                     user_id: {
@@ -45,7 +45,7 @@ def Consolidate(input, user_id, data_type):
                     }
                 }
             j.update(user_dict)
-        else:
+        else:                           # 更新用戶內的資料
             new_dict = \
                 {
                     data_type: input
@@ -67,10 +67,10 @@ def Consolidate(input, user_id, data_type):
 #### 演算推薦名單 ####
 def algorithm(input, user_id):
 
-    if input != "開始搜尋":
+    if input != "開始搜尋":       # 接收linebot"開始搜尋"按鈕
         return "指令錯誤!"
 
-    #### to check if stores meet user's need ####
+    #### to check if stores meet user's needs ####
     user_need = {}
     with open('./user_data.json', 'r', encoding='utf-8') as f:
         user_j = json.load(f)
@@ -79,13 +79,13 @@ def algorithm(input, user_id):
                 for needs in user_j[users]:
                     user_need[needs] = user_j[users][needs]
 
-    with open('./final_0613.json', 'r', encoding='utf-8') as f:
+    with open('./final_0613.json', 'r', encoding='utf-8') as f:      # final_0613.json為 2021/06/13 爬蟲抓到的店家資料
         rest_j = json.load(f)
         temp_dict = rest_j
 
     if "attributes" not in user_need or "price" not in user_need or "drinks" not in user_need or "aircon" not in user_need \
             or "campus" not in user_need or "Transportation" not in user_need or "time" not in user_need:
-        return "finish setting, plz!"
+        return "finish setting, plz!"        # 確認用戶必填資料是否完整
 
     food_type = user_need["attributes"]
     user_air = user_need["aircon"]
