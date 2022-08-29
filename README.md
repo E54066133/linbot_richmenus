@@ -112,11 +112,11 @@
 - 成品測試及debug - **許孝華 林鑫伯**
 
 
-- 期中 presentation - **許孝華(我) 莊雲澔**
+- 期中 presentation - **許孝華 莊雲澔**
 - 期末 presentation - **所有人**
-- final template 撰寫 - **許孝華(我)**
-- source code 整理 - **林鑫伯** **許孝華(我)**
-- demo video  錄製 - **許孝華(我)**
+- final template 撰寫 - **許孝華**
+- source code 整理 - **林鑫伯** **許孝華**
+- demo video  錄製 - **許孝華**
 
 
 ## References
